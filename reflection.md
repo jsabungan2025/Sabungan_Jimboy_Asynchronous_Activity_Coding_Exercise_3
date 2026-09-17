@@ -14,13 +14,13 @@
 2. Final Reflection Questions
    1. What error occurred when trying to access atm.__pin directly? Why does Python behave this way?
       
-   -When I tried to access atm.__pin directly, I got an AttributeError. This will happened because __pin is a private attribute in the ATM class. In the python uses name mangling for attributes that start with two underscores, which makes it harder to access them directly from outside the class. This helps us protect important data, like the PIN or data imformation of the user and from being accidentally changed, accessed or leaks of data information of the user.
+    - When I tried to access atm.__pin directly, I got an AttributeError. This will happened because __pin is a private attribute in the ATM class. In the python uses name mangling for attributes that start with two underscores, which makes it harder to access them directly from outside the class. This helps us protect important data, like the PIN or data imformation of the user and from being accidentally changed, accessed or leaks of data information of the user.
 
    3. How did using @property allow you to change internal data structures or add validation without altering the public API for the caller?
       
-   -Using @property allowed me to access the balance using account.balance instead of calling a separate getter method. Even though the actual balance is stored internally as _balance, the user does not need to know how it is stored.
+    - Using @property allowed me to access the balance using account.balance instead of calling a separate getter method. Even though the actual balance is stored internally as _balance, the user does not need to know how it is stored.
 It also allowed me to add validation when changing the balance. For example, I can prevent the balance from being set to a negative number through the setter. The way the caller uses account.balance stays the same even if the internal code or validation changes.
 
    4. How did the ATM class demonstrate abstraction relative to the underlying BankAccount logic?
       
-   -The ATM class demonstrates how works by hiding the more complicated account operations from the user. Instead of directly accessing with _balance or _transactions, the user can only simply use methods like check_balance, perform_deposit, and perform_withdrawal. Other than method they are not have access to edit or change any information without the personnel of the bank.
+    - The ATM class demonstrates how works by hiding the more complicated account operations from the user. Instead of directly accessing with _balance or _transactions, the user can only simply use methods like check_balance, perform_deposit, and perform_withdrawal. Other than method they are not have access to edit or change any information without the personnel of the bank.
